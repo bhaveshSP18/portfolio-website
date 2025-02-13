@@ -26,7 +26,7 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLUE_SMOKE_0B8058C10 }}
           action: "upload"
-          app_location: "/" # The root of your repository contains HTML, CSS, and JS
+          app_location: "packages" # The root of your repository contains HTML, CSS, and JS
           output_location: "" # No build step needed
 
   close_pull_request_job:
@@ -38,5 +38,6 @@ jobs:
         id: closepullrequest
         uses: Azure/static-web-apps-deploy@v1
         with:
-          action: "close"
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLUE_SMOKE_0B8058C10 }}
+        action: "close"
 
